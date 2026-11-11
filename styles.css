@@ -296,8 +296,9 @@ strong.sign { font-weight: 700; color: var(--text-primary); }
 .cover { position: relative; width: 100%; height: 100%; overflow: hidden; }
 
 .cover-sky-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+/* Pond sits in the flow between title and epigraph so the three keep a fixed rhythm on any screen height */
 .cover-pond-svg {
-  position: absolute; left: 0; right: 0; bottom: 236px; height: 120px; width: 100%;
+  position: relative; flex: none; height: clamp(78px, 12vh, 104px); width: calc(100% + 44px); margin: clamp(12px, 3.6vh, 30px) -22px clamp(8px, 2.2vh, 18px);
   display: block; overflow: visible;
 }
 .cv-sky-a { stop-color: var(--sky-top); }
@@ -317,14 +318,14 @@ strong.sign { font-weight: 700; color: var(--text-primary); }
 
 .cover-content {
   position: relative; z-index: 2; height: 100%;
-  display: flex; flex-direction: column; align-items: center; text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
   padding: 26px 22px 12px;
 }
 
-.cover-head { display: flex; flex-direction: column; align-items: center; padding-top: 34px; }
+.cover-head { display: flex; flex-direction: column; align-items: center; }
 
 .cover-rule {
-  width: 34px; height: 1px; background: var(--accent); opacity: 0.7; margin-bottom: 26px;
+  width: 34px; height: 1px; background: var(--accent); opacity: 0.7; margin-bottom: clamp(14px, 3vh, 26px);
   transform-origin: center; animation: coverLineGrow 1.3s var(--ease-out) both;
 }
 
@@ -348,13 +349,12 @@ html[data-theme="sepia"] .cover-title, html[data-theme="paper"] .cover-title, ht
 .cover-hanja::before, .cover-hanja::after { content: ''; width: 22px; height: 1px; background: var(--accent); opacity: 0.55; }
 .cover-hanja::after { margin-left: -0.5em; }
 
-.cover-spacer { flex: 1 1 auto; min-height: 120px; }
 
 /* Readability without a box: a soft halo in the page colour keeps stars from crossing the letters */
 .cover-epigraph {
   font-family: var(--font-reader); font-size: 1.06rem; font-weight: 400;
   color: var(--text-primary); line-height: 1.62; letter-spacing: 0.01em;
-  word-break: keep-all; margin-bottom: 24px; padding: 0 12px;
+  word-break: keep-all; margin-bottom: clamp(16px, 3.6vh, 30px); padding: 0 12px;
   text-shadow: 0 0 14px var(--bg-page), 0 0 6px var(--bg-page), 0 1px 2px var(--bg-page);
   animation: coverRise 1.2s var(--ease-out) 0.6s both;
 }

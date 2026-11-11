@@ -290,17 +290,6 @@
             ${coverStarsSvg()}
             <line class="cover-shooting" x1="262" y1="330" x2="304" y2="296"/>
           </svg>
-          <svg class="cover-pond-svg" viewBox="0 0 400 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-            <defs><radialGradient id="cvGlow" cx="50%" cy="60%" r="55%"><stop class="cv-glow-a" offset="0"/><stop class="cv-glow-b" offset="1"/></radialGradient></defs>
-            <ellipse cx="200" cy="76" rx="210" ry="60" fill="url(#cvGlow)"/>
-            <line class="cover-horizon" x1="30" y1="46" x2="370" y2="46"/>
-            <ellipse class="cover-pond" cx="200" cy="80" rx="152" ry="27"/>
-            <ellipse class="cover-ripple-ring" cx="200" cy="80" rx="60" ry="11"/>
-            <ellipse class="cover-ripple-ring r2" cx="200" cy="80" rx="60" ry="11"/>
-            <ellipse class="cover-ripple-ring r3" cx="200" cy="80" rx="60" ry="11"/>
-            <circle class="cover-orb" cx="200" cy="20" r="4.5"/>
-            <ellipse class="cover-orb-reflection" cx="200" cy="80" rx="9" ry="3"/>
-          </svg>
           <div class="cover-frame-line" aria-hidden="true"></div>
           <span class="cover-genre">단편소설</span>
           <div class="cover-content">
@@ -309,11 +298,21 @@
               <h1 class="cover-title">우리가 좋아했던<br>것들의 행방</h1>
               <span class="cover-hanja">行 方</span>
             </div>
-            <div class="cover-spacer"></div>
+            <svg class="cover-pond-svg" viewBox="0 0 400 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <defs><radialGradient id="cvGlow" cx="50%" cy="60%" r="55%"><stop class="cv-glow-a" offset="0"/><stop class="cv-glow-b" offset="1"/></radialGradient></defs>
+              <ellipse cx="200" cy="76" rx="210" ry="60" fill="url(#cvGlow)"/>
+              <line class="cover-horizon" x1="30" y1="46" x2="370" y2="46"/>
+              <ellipse class="cover-pond" cx="200" cy="80" rx="152" ry="27"/>
+              <ellipse class="cover-ripple-ring" cx="200" cy="80" rx="60" ry="11"/>
+              <ellipse class="cover-ripple-ring r2" cx="200" cy="80" rx="60" ry="11"/>
+              <ellipse class="cover-ripple-ring r3" cx="200" cy="80" rx="60" ry="11"/>
+              <circle class="cover-orb" cx="200" cy="20" r="4.5"/>
+              <ellipse class="cover-orb-reflection" cx="200" cy="80" rx="9" ry="3"/>
+            </svg>
             <p class="cover-epigraph">
-              <span class="epigraph-line">처음 걷는 길이었다.</span>
+              <span class="epigraph-line">“처음 걷는 길이었다.</span>
               <span class="epigraph-line epigraph-gap">아직 누구와도 함께</span>
-              <span class="epigraph-line">좋아한 적 없는 길이었다.</span>
+              <span class="epigraph-line">좋아한 적 없는 길이었다.”</span>
             </p>
             <div class="cover-foot">
               <button type="button" class="btn-open-book" data-action="open-first-chapter">책 펼치기 →</button>
