@@ -833,3 +833,4 @@ html[data-theme="sepia"] .cover-title, html[data-theme="paper"] .cover-title, ht
 
 .credits-page p.credits-break { text-align: center; text-indent: 0; color: var(--text-muted); margin: 1.2em 0; }
 .credits-refs .credits-ref-note { margin: 0 0 1.6em; font-family: var(--font-ui); font-size: 0.78rem; line-height: 1.6; color: var(--text-muted); text-indent: 0; white-space: normal; }
+.credits-end-bottom { padding: 30px 0 6px; }
