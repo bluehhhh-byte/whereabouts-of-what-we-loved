@@ -28,25 +28,87 @@
 
   const DECK_AUTOHIDE_MS = 5200;
 
-  // Ending credits (작가의 말) — edit freely.
+  // Ending credits (그녀의 책) — edit freely.
   const CREDITS_CHAPTER_ID = 99;
+  // 그녀의 책 — 작가의 말 자리. '*' = 장면 나눔
   const AFTERWORD_PARAS = [
-    '이 소설의 제목은 ‘우리가 좋아했던 것들의 행방’입니다. 두 사람이 함께 좋아했던 것들이 헤어진 뒤 어디로 가는지 묻는 제목입니다. 카페에서 곡이 바뀌었을 때 동시에 고개를 든 일, 물고기는 먹을 생각을 한다는 농담, 한 사람이 보내고 다른 사람이 좋아하게 된 노래, 혼자 걷기에도 좋은 길, 적어 두는 버릇. 회색 책의 다섯 줄입니다.',
-    '사서는 그 다섯 줄이 두 사람 것이지만 두 사람이 같이 와야만 읽을 수 있는 것은 아니라고 말합니다. 노래는 혼자 들어도 되고, 길은 다른 계절에 혼자 걸어도 됩니다. 농담만은 안 됩니다. 한 사람이 하면 농담이 아니기 때문입니다. 저는 그 대답이 제목에 대한 가장 정직한 답이라고 생각했습니다. 어떤 것은 한 사람에게 남고, 어떤 것은 어디로 갔는지 아무도 모릅니다.',
-    '그녀에게 취향은 저울입니다. 오래 만난 시간을 잘못 썼다고 믿는 사람이 다시는 시간을 잃지 않으려고 만든 저울이고, 세 번이면 안다고 그녀는 말합니다. 그런데 이 원고에서 그녀는 지금 만나는 사람을 네 번 만났다고 말합니다. 설명은 없습니다. 저는 그 모순을 고치지 않고 두었습니다. 사람은 자기가 세운 기준을 자기가 어깁니다. 그것은 거짓말이 아니라 사는 일에 가깝습니다.',
-    '그는 좋은 사람으로 보입니다. 부담을 주지 않고 늘 괜찮다고 말합니다. 그것은 성격이 아니라 열다섯 살부터 연습한 성실함입니다. 휴대전화의 자동완성이 ‘잘’ 다음에 ‘지내요’를 먼저 띄울 만큼 오래 연습한 말입니다. 그녀는 그것을 알지 못했습니다. 그가 보여 주지 않았고, 그녀가 묻지 않았기 때문입니다.',
-    '도시는 이유 없이 무너집니다. 담이 금 가고, 시계탑의 모서리가 떨어지고, 돌담이 길게 쓰러집니다. 시계탑의 노인은 몇 년째 장부에 같은 줄을 씁니다. 모서리 보수. 미완. 저는 그 장부를 이 소설에서 가장 좋아합니다. 될 때까지 하는 것을 노력이라고 부른다는 말은 거기서 나옵니다. 믿어서 하는 것이 아니라 그냥 하는 것입니다.',
-    '이 원고에는 오래 바라보는 자리를 몇 군데 두었습니다. 그녀가 사라진 뒤 지나가는 버스 세 대, 돌을 올리는 노인의 여덟 번, 교차로에서 보낸 반나절, 답장이 오기까지의 사십 초. 아무것도 하지 말고 반나절 바라보기만 하라는 그림자의 말을 주인공이 실제로 해 보는 장면이 그래서 들어갔습니다. 새로운 것이 보였는지는 그도 모릅니다. 다만 깃발을 드는 손이 매번 같은 높이라는 것은 알게 됩니다.',
-    '숲에서 만나는 그림자에게 ‘괴물’이라는 이름을 준 것은 그것이 못생긴 목소리를 내기 때문입니다. 노력이 부족한 거 아니냐고, 아무도 몰라줬으면 없었던 거라고. 그 목소리는 밖에서 오지 않습니다. 그림자는 그 말을 소리 내어 돌려주고, 그중 하나는 자기가 틀렸을지도 모른다고 물러섭니다. 그림자도 자기 말에 갇혀 있지 않습니다.',
-    '도서관에서 그는 한 번도 쓴 적 없는 문장을 발견합니다. 내가 부족해서 선택받지 못했다. 기억이 아니라 기억에 붙인 결론입니다. 사서는 그것을 노력이 아니라 기다림의 다른 이름이라고 부릅니다. 강 위에서 그 문장은 물에 번져 사라집니다. 기억은 남고 결론만 갑니다.',
-    '이 소설에 새로 둔 원칙이 하나 있습니다. 오래 지켜온 생각이 반드시 옳은 것은 아니고, 생각을 바꾸었다고 과거의 진심이 거짓이 되는 것도 아니라는 것입니다. 그래서 마지막 장의 노트에서 그는 ‘그녀가 보낸,’까지 쓰고 멈춥니다. 앞 장의 줄들을 지우지 않습니다. 그때는 그렇게 적는 것이 맞았습니다. 줄을 바꿔 노래의 제목만 씁니다. 변화는 깨달음이 아니라 한 줄의 수정으로 옵니다.',
-    '그녀도 그렇게 말합니다. 잘 지내라고 쉽게 말했다고, 그때는 그게 진심이었고 지금은 모르겠다고. 저는 그녀를 가해자로도, 주인공을 성장시키려고 등장한 인물로도 만들고 싶지 않았습니다. 그녀에게도 설명되지 않는 사정이 남아 있어야 했습니다.',
-    '이 소설의 안내자들이 하는 말 가운데 몇 마디는 제 것이 아닙니다. 더 늦기 전에 춤을 추라는 말, 분석부터 시작하지 말라는 말, 아름다운 글이 가장 형편없다는 말, 우리는 같은 인간이니까 비로소 인간이 보인다는 말. 벨라 타르의 인터뷰와 강연에서 빌려 왔습니다. 그녀가 읽은 책의 제목은 밀란 쿤데라의 것입니다. 빌린 말은 빌린 말대로 두었습니다.',
-    '여덟 개의 장은 봄비에서 시작해 꽃잎과 여름밤, 낙엽을 지나 눈 내리는 강에서 끝납니다. 도시 안에서는 하룻밤이 흐르지만, 주인공의 마음 안에서는 한 해가 지나갑니다. 누군가를 보내는 데 필요한 시간이 대개 그 정도라고, 저는 겪어서 알고 있었습니다.',
-    '마지막 장에서 그는 답장을 씁니다. 처음 쓴 세 문장은 틀린 말이 하나도 없고, 아무것도 보여 주지 않는 문장입니다. 그녀가 그랬듯이 그도 묻지 않고 정할 뻔했습니다. 그래서 한 줄을 더 씁니다. 카페에서 곡이 바뀌었을 때 자기도 그 곡을 알았다고. 다시 만나자는 말은 아닙니다. 다만 일 년 반 동안 하지 않은 말을 한 번은 하고 떠나는 사람으로 그를 남기고 싶었습니다. 그다음 그는 봄에 함께 걸었던 강변길을 혼자 걷고, 둘이 돌아섰던 다리를 건넙니다. 그 너머는 아직 누구와도 함께 좋아한 적 없는 길입니다.',
-    '연못가의 노인과 별 수집가, 시계탑의 노인, 교차로의 신호수, 시계공과 사서, 아침 커피를 파는 할머니, 그리고 끝내 함께 데려가기로 한 그림자에게. 오래 머물러 주어 고맙습니다. 그리고 여기까지 읽어 주신 당신에게도.'
+    "나는 세 번이면 안다고 말하던 사람이다.",
+    "그 숫자가 어디서 왔는지 그에게는 말하지 않았다.",
+    "*",
+    "오 년을 만난 사람이 있었다. 처음 본 날 좋아졌다. 이유는 몰랐다. 몰라도 되는 줄 알았다.",
+    "처음 몇 해는 그 사람이 내 말 끝에 바로 대답했다. 어느 해부터인가 대답이 조금씩 늦어졌다. 나는 피곤해서 그런 거라고 생각했다.",
+    "서로 몰랐던 얼굴을 알아 가는 동안 우리는 편해졌다. 편해진 다음에는 조용해졌다.",
+    "내가 고른 노래를 그 사람은 끝까지 듣지 않게 되었다. 내가 고른 식당에서는 휴대전화를 봤다. 나는 다음번엔 더 잘 고르면 된다고 생각했다.",
+    "그렇게 오 년이 지났다. 끝은 누구 한 사람의 잘못으로 오지 않았다. 그냥 왔다.",
+    "헤어지고 나서 처음 한 일은 나이를 세는 일이었다. 손가락이 모자라지는 않았다. 그래도 몇 번을 다시 셌다.",
+    "그 뒤로 오래, 내가 모자라서였다고 생각했다.",
+    "*",
+    "그해 봄에는 청첩장이 세 장 왔다. 나는 세 번 다 갔고, 세 번 다 웃었다.",
+    "단체 대화방에 아기 사진이 올라오면 제일 먼저 하트를 눌렀다. 진심이었다.",
+    "저녁을 같이 먹을 사람이 모자란 적은 없었다. 연락처에는 이름이 많았다. 일요일 밤 열 시에 전화할 사람이 없었을 뿐이다.",
+    "*",
+    "그래서 숫자를 정했다.",
+    "한 번은 믿지 않는다. 처음 본 날의 마음이 얼마나 오래 틀릴 수 있는지 알았으니까.",
+    "오래도 두지 않는다. 다시 그만큼 쓸 수는 없었으니까.",
+    "세 번은 그 사이 어딘가였다. 정확한 숫자는 아니었다. 내가 감당할 수 있는 만큼이었다.",
+    "하나 더 정했다. 편한 사람은 안 된다. 편해지는 건 조용해지기 시작했다는 뜻이었으니까.",
+    "*",
+    "그는 처음부터 편했다.",
+    "두 번째 만난 날, 나는 그를 그 칸에 넣었다. 너무 빨랐다는 건 안다. 그가 나빠서가 아니었다. 처음부터 편한 사람이라면, 조용해지는 것도 그만큼 빠를 것 같았다. 그리고 나는 기다릴 시간이 많지 않다고 믿었다.",
+    "*",
+    "어느 밤 그가 노래를 하나 보냈다. 설명은 없었다. 오래된 녹음이었고 좋았다.",
+    "나도 하나 보내야 할 것 같았다. 사흘을 골랐다. 너무 쉬운 곡이면 아무 생각 없는 사람처럼 보일 것 같았고, 너무 아끼는 곡이면 끝까지 듣지 않을까 봐 무서웠다.",
+    "결국 아끼는 곡을 보냈다. 그는 좋다고 답했다. 그 뒤로 우리는 가끔 노래를 주고받았다. 고를 때마다 조금씩 부담스러웠다. 그 말을 그에게 한 적은 없다.",
+    "*",
+    "겨울에 그와 긴 영화를 봤다. 보는 내내 당신과 내 자리를 찾았다고 메모에 적었다.",
+    "찾지 못했다. 영화 탓도 그의 탓도 아니었다. 누군가의 옆자리가 조용해지는 건 알았지만, 오래 따뜻한 자리는 본 적이 없었다. 봐도 알아보지 못했을 것이다.",
+    "*",
+    "비 오는 날의 카페가 있었다.",
+    "이야기를 하다 보면 내 팔꿈치가 자꾸 물잔을 밀었다. 그가 보고 있는 걸 알았다. 그런데 그는 손대지 않았다. 나는 잔을 직접 옆으로 밀었다. 이상하게 그게 편했다.",
+    "그때 곡이 바뀌었다. 스피커 한쪽이 고장 나서 반쯤만 들렸다. 그래도 알았다. 사흘을 골라 그에게 보낸 곡이었다.",
+    "나는 고개를 들었다. 그도 고개를 들었다. 나는 기다렸다. 그는 아무 말도 하지 않았다.",
+    "그 침묵을 나는 알았다. 끝까지 듣지 않은 사람의 침묵이었다. 적어도 그때는 그렇게 들렸다.",
+    "그래서 정말 좋은 사람이라고 말했다.",
+    "좋은 사람은 이미 많았다. 나한테 필요한 건 좋은 사람이 아니었다. 그 말은 칭찬이었고, 작별이었다.",
+    "*",
+    "그 봄에 지금 만나는 사람과 네 번 만났다고 그에게 말했다. 그는 묻지 않았다.",
+    "처음으로 세 번을 넘긴 만남이었다. 모르는 채로 한 번 더 앉아 있어 보고 싶었다. 그 사람과는 여섯 번을 만나고 헤어졌다.",
+    "아깝지 않았다. 모르는 채로 있었던 시간이 처음으로 아깝지 않았다.",
+    "*",
+    "다른 도시로 와서 식탁을 샀다. 2인용이었다. 가게 사람이 혼자 쓰시냐고 물었고, 나는 일단은요, 라고 대답했다. 의자 하나는 가방을 올려 두는 자리가 되었다.",
+    "짐을 풀다가 머그잔이 하나 나왔다. 오 년을 만난 사람이 처음 만난 해에 사 준 잔이었다. 버리려다 커피를 담았다.",
+    "그 사람이 나를 처음 좋아한 것도 진심이었을 것이다. 식은 것도 진심이었을 것이다. 둘 중 하나가 거짓이어야 덜 아플 것 같아서, 오래 하나를 지우려고 했다.",
+    "지금은 둘 다 둔다. 그 사람이 식은 건 그 사람의 계절이었다. 내가 모자라서가 아니었다.",
+    "아까운 날도 있었다. 전부는 아니었다.",
+    "*",
+    "어젯밤 가게에서 그 곡을 들었다. 이번에는 스피커가 양쪽 다 멀쩡했다. 처음으로 끝까지 들었다.",
+    "그가 어떻게 지내는지 궁금해졌다. 돌아가고 싶어서가 아니었다. 그 봄에 약속하지 않았던 대로, 나는 조금 다른 사람이 되어 있었다. 그래서 물을 수 있었다.",
+    "아침에 짧게 보냈다. 잘 지내죠?",
+    "*",
+    "답장이 왔다.",
+    "잘 지내요. 연락 고마워요. 당신도 잘 지내길 바라요.",
+    "그다운 문장이었다. 틀린 말이 하나도 없는.",
+    "그 아래 한 줄이 더 있었다.",
+    "그 카페에서 곡이 바뀌었을 때, 나도 그 곡을 알았어요.",
+    "나는 그 줄을 오래 보았다.",
+    "그는 끝까지 들었던 것이다. 그날도, 그 전에도. 그 침묵은 듣지 않은 사람의 침묵이 아니었다. 말하지 않는 사람의 침묵이었다. 나는 그 둘을 구별하지 못했다. 한 사람의 침묵을 너무 오래 들었으니까. 그리고 구별해 볼 만큼 기다릴 수 없다고 믿었으니까.",
+    "그걸 이제 안다고 해서 돌아갈 일은 아니었다. 다만 사흘 동안 곡을 고르던 내가 조금 덜 부끄러워졌다.",
+    "나는 답장을 썼다. 괜찮다는 말도, 잘 지내라는 말도 아니었다.",
+    "언제부터요?",
+    "처음으로 그에게 물은 것이었다. 답은 오지 않았다. 그래도 괜찮았다.",
+    "*",
+    "저녁에 책장 맨 아래 칸에서 별자리 책을 꺼냈다. 몇 해 전에 사 두고 펴지 않은 책이었다.",
+    "재미있을지는 여전히 몰랐다.",
+    "베란다로 나갔다. 달이 밝아서 별이 잘 보이지 않았다.",
+    "첫 장에는 누구나 처음 찾는다는 별자리가 있었다. 허리에 별 세 개가 나란히 박힌 별자리.",
+    "세 개를 찾는 데 이십 분이 걸렸다. 세 번이면 안다던 사람이.",
+    "옆집 베란다에 나이 든 부부가 나와 있었다. 둘은 아무 말 없이 나란히 서서 달을 보고 있었다. 조용했다. 그래도 식은 사람들의 조용함은 아니었다.",
+    "저만큼 나란히 서 있으려면 언제쯤 시작해야 하는지, 나는 셈을 하다가 그만두었다.",
+    "서두르는 마음은 그대로 있었다. 그걸 지우지는 않았다. 다만 별 세 개를 찾는 데 쓴 이십 분은 아깝지 않았다.",
+    "방으로 들어와 목록을 폈다. 별자리 옆에 날짜를 적었다.",
+    "미완이라고는 적지 않았다. 오늘은 시작한 날이었다."
   ];
-  const AFTERWORD_SIGNATURE = '2026년 11월. 박준성.';
+  const AFTERWORD_SIGNATURE = '';
 
   // What inspired the story — listed after the afterword. 소설은 해설 영상, 영화는 예고편, 음악은 음원.
   const INSPIRATIONS = [
@@ -123,7 +185,7 @@
 
   function seasonFor(chapterId, pageType) {
     if (pageType === 'cover' || chapterId === 0) return { key: 'none', density: 0 };
-    if (chapterId === CREDITS_CHAPTER_ID) return { key: 'rain', density: 0.6 }; // 작가의 말 — 1장의 비로 돌아온다
+    if (chapterId === CREDITS_CHAPTER_ID) return { key: 'none', density: 0 }; // 그녀의 책 — 맑은 밤, 달
     return CHAPTER_SEASON[chapterId] || { key: 'none', density: 0 };
   }
 
@@ -351,7 +413,7 @@
       <div class="credits-top">
         <span class="credits-end-mark">끝</span>
         <div class="credits-star-wrap"><span class="credits-star"></span></div>
-        <h2 class="credits-title">작가의 말</h2>
+        <h2 class="credits-title">그녀의 책</h2>
       </div>`;
   const creditsBottomHtml = (withButton) => `
       <div class="credits-bottom">
@@ -359,9 +421,9 @@
         ${withButton ? '<button type="button" class="btn-open-book btn-back-cover" data-action="back-to-cover">처음으로 돌아가기</button>' : ''}
       </div>`;
   // Afterword blocks, each a paginatable item; the inspiration list is one block so it stays on a single page
-  const AFTERWORD_ITEMS = AFTERWORD_PARAS.map((t) => `<p class="novel-para credits-para">${escapeHtml(t)}</p>`);
-  const SIGNATURE_HTML = `<p class="novel-para credits-para credits-signature">${escapeHtml(AFTERWORD_SIGNATURE)}</p>`;
-  const INSPIRATIONS_HTML = '<div class="credits-refs"><p class="credits-ref-head">이 이야기에 영감을 준 것들</p>' +
+  const AFTERWORD_ITEMS = AFTERWORD_PARAS.map((t) => t === '*' ? '<p class="novel-para credits-para credits-break">＊</p>' : `<p class="novel-para credits-para">${escapeHtml(t)}</p>`);
+  const SIGNATURE_HTML = AFTERWORD_SIGNATURE ? `<p class="novel-para credits-para credits-signature">${escapeHtml(AFTERWORD_SIGNATURE)}</p>` : '';
+  const INSPIRATIONS_HTML = '<div class="credits-refs"><p class="credits-ref-note">안내자들의 말 가운데 몇 마디는 벨라 타르의 인터뷰와 강연에서, 그녀가 읽은 책의 제목은 밀란 쿤데라에게서 빌렸습니다.</p><p class="credits-ref-head">이 이야기에 영감을 준 것들</p>' +
     INSPIRATIONS.map((r, i) => `<p class="credits-ref"><a href="${r.url}" target="_blank" rel="noopener"><span class="ref-no">${i + 1}.</span> <span class="ref-kind">(${r.kind})</span> ${escapeHtml(r.by)}, 〈${escapeHtml(r.title)}〉 <span class="ref-year">(${r.year})</span></a></p>`).join('') +
     '</div>';
   const creditsItemHtml = (html) => html;
@@ -443,8 +505,8 @@
     chapterStartPages[CREDITS_CHAPTER_ID] = pages.length;
     measureBody.classList.add('credits-page'); // measure with the credits typography, same as the rendered page
     const pushCredits = (pg, offset) => pages.push({
-      type: 'credits', chapterId: CREDITS_CHAPTER_ID, chapterTitle: '작가의 말', startParaIndex: pg.start + offset, endParaIndex: pg.end + offset,
-      html: `${contentHeaderHtml('작가의 말')}<div class="page-body-content credits-page">${pg.html}</div>${contentFooterHtml('')}`
+      type: 'credits', chapterId: CREDITS_CHAPTER_ID, chapterTitle: '그녀의 책', startParaIndex: pg.start + offset, endParaIndex: pg.end + offset,
+      html: `${contentHeaderHtml('그녀의 책')}<div class="page-body-content credits-page">${pg.html}</div>${contentFooterHtml('')}`
     });
     // Signature is the tail: it never sits alone, the last paragraph moves with it if needed
     fillPages(measureBody, maxBodyHeight, AFTERWORD_ITEMS, creditsItemHtml, CREDITS_TOP_HTML, SIGNATURE_HTML).forEach((pg) => pushCredits(pg, 0));
@@ -714,7 +776,7 @@
         if (Number(n.getAttribute('data-ratio')) <= ratio + 0.0001) {
           const id = Number(n.getAttribute('data-chapter'));
           const chap = (window.NOVEL_DATA.chapters || []).find((c) => c.id === id);
-          title = id === CREDITS_CHAPTER_ID ? '작가의 말' : chap ? chap.fullTitle : '표지';
+          title = id === CREDITS_CHAPTER_ID ? '그녀의 책' : chap ? chap.fullTitle : '표지';
         }
       });
       return `${title} · ${Math.round(ratio * 100)}%`;
@@ -793,7 +855,7 @@
     if (state.mode === 'scroll') {
       chapterId = scrollCurrentChapter();
       const chap = (window.NOVEL_DATA.chapters || []).find((c) => c.id === chapterId);
-      el.deckChapter.textContent = chapterId === CREDITS_CHAPTER_ID ? '작가의 말' : chap ? chap.fullTitle : '표지';
+      el.deckChapter.textContent = chapterId === CREDITS_CHAPTER_ID ? '그녀의 책' : chap ? chap.fullTitle : '표지';
       el.deckPage.textContent = `${pct}% 읽음`;
     } else if (page) {
       chapterId = page.chapterId;
@@ -845,7 +907,7 @@
         right: `${firstContent && firstContent.pageNo ? firstContent.pageNo : 1}쪽`
       }));
     });
-    items.push(tocItemHtml({ chapterId: CREDITS_CHAPTER_ID, motif: CHAPTER_MOTIFS.end, num: 'EPILOGUE', title: '작가의 말', right: '끝' }));
+    items.push(tocItemHtml({ chapterId: CREDITS_CHAPTER_ID, motif: CHAPTER_MOTIFS.end, num: 'EPILOGUE', title: '그녀의 책', right: '끝' }));
     el.tocList.innerHTML = items.join('');
     el.tocList.querySelectorAll('.toc-item').forEach((li) => {
       li.addEventListener('click', () => {

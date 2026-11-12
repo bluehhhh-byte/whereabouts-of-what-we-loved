@@ -830,3 +830,6 @@ html[data-theme="sepia"] .cover-title, html[data-theme="paper"] .cover-title, ht
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
+
+.credits-page p.credits-break { text-align: center; text-indent: 0; color: var(--text-muted); margin: 1.2em 0; }
+.credits-refs .credits-ref-note { margin: 0 0 1.6em; font-family: var(--font-ui); font-size: 0.78rem; line-height: 1.6; color: var(--text-muted); text-indent: 0; white-space: normal; }
