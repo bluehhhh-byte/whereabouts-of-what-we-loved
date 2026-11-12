@@ -126,7 +126,7 @@
   ];
 
   // Signs and inscriptions quoted in the text → bold
-  const SIGN_TEXTS = ['별을 모으는 곳.', '그날로 돌아갈 수 있다면.', '건너편으로 가는 사람은 돌아오는 길을 묻지 마시오.', '기억을 읽는 사람은 많지만, 마음을 읽는 사람은 없습니다.', '그날 나는 그녀가 나를 바라보기를 기다리고 있었다.', '함께 좋아하게 된 것들.', '내가 부족해서 선택받지 못했다.', '기다리지 않아도 별은 다시 뜬다.', '누구의 잘못도 아니다.', '기다림은 끝나지 않아도 시간이 끝날 수 있다.'];
+  const SIGN_TEXTS = ['별을 모으는 곳.', '버리는 거 팝니다.', '그날로 돌아갈 수 있다면.', '건너편으로 가는 사람은 돌아오는 길을 묻지 마시오.', '기억을 읽는 사람은 많지만, 마음을 읽는 사람은 없습니다.', '그날 나는 그녀가 나를 바라보기를 기다리고 있었다.', '함께 좋아하게 된 것들.', '내가 부족해서 선택받지 못했다.', '기다리지 않아도 별은 다시 뜬다.', '누구의 잘못도 아니다.', '기다림은 끝나지 않아도 시간이 끝날 수 있다.'];
   function paraHtml(text) {
     let html = escapeHtml(text);
     for (const t of SIGN_TEXTS) if (text.includes(t)) html = html.replace(escapeHtml(t), `<strong class="sign">${escapeHtml(t)}</strong>`);
@@ -984,12 +984,15 @@
       if (!res.ok) return;
       const cues = await res.json();
       if (!cues || !cues.chapters) return;
+      // ponytail: audio built from an older text → paragraph cues misalign; use Web Speech until rebuilt
+      const stale = (window.NOVEL_DATA.chapters || []).some((c) => ((cues.chapters[String(c.id)] || {}).starts || []).length !== c.paragraphs.length);
+      if (stale) { if (el.ttsVoiceNote) el.ttsVoiceNote.textContent = '본문이 고쳐져 내장 오디오북을 다시 만드는 중입니다. 그동안은 브라우저 음성으로 낭독합니다.'; return; }
       audiobook.cues = cues;
       audiobook.available = true;
     } catch (e) {
       /* offline or audio not built: Web Speech fallback stays active */
     }
-    if (!audiobook.available && el.ttsVoiceNote) {
+    if (!audiobook.available && !audiobook.cues && el.ttsVoiceNote && !/다시 만드는 중/.test(el.ttsVoiceNote.textContent)) {
       el.ttsVoiceNote.textContent = '내장 오디오북을 불러오지 못해 브라우저 음성으로 낭독합니다. 선택한 성별에 가장 가까운 한국어 음성을 씁니다.';
     }
   }
