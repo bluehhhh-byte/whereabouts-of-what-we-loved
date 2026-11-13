@@ -122,6 +122,8 @@
     { kind: '소설', by: '무라카미 하루키', title: '도시와 그 불확실한 벽', year: 2023, url: 'https://www.youtube.com/watch?v=y1kxdlxZTLo' },
     { kind: '책', by: '변학수', title: '내면의 수사학', year: 2008, url: 'https://www.yes24.com/24/AuthorFile/Author/134076' },
     { kind: '영화', by: '이창동', title: '가능한 사랑', year: 2026, url: 'https://www.youtube.com/watch?v=XkBZf4ogtXU' },
+    { kind: '영화', by: '벨라 타르', title: '파멸', year: 1987, url: 'https://theplaylist.net/damnation-exclusive-4k-trailer-20201023/' },
+    { kind: '영화', by: '이일하', title: '호루몽', year: 2025, url: 'https://www.kmdb.or.kr/db/kor/detail/movie/A/13338' },
     { kind: '음악', by: '기리보이', title: '농담처럼', year: 2020, url: 'https://www.youtube.com/watch?v=90lREWfo8Yk' },
     { kind: '음악', by: '기리보이', title: '별이지고있다', year: 2019, url: 'https://www.youtube.com/watch?v=E22n0_btcqw' },
     { kind: '음악', by: '토일, 릴러말즈, 로꼬', title: '시한부', year: 2021, url: 'https://www.youtube.com/watch?v=CUepagh0jfE' },
@@ -420,6 +422,7 @@
   const CREDITS_TOP_HTML = `
       <div class="credits-top">
                 <div class="credits-star-wrap"><span class="credits-star"></span></div>
+        <span class="chapter-kicker">에필로그</span>
         <h2 class="credits-title">그녀의 책</h2>
       </div>`;
   const creditsBottomHtml = (withButton) => `
@@ -430,7 +433,7 @@
   // Afterword blocks, each a paginatable item; the inspiration list is one block so it stays on a single page
   const AFTERWORD_ITEMS = AFTERWORD_PARAS.map((t) => t === '*' ? '<p class="novel-para credits-para credits-break">＊</p>' : `<p class="novel-para credits-para">${escapeHtml(t)}</p>`);
   const SIGNATURE_HTML = (AFTERWORD_SIGNATURE ? `<p class="novel-para credits-para credits-signature">${escapeHtml(AFTERWORD_SIGNATURE)}</p>` : '') + '<div class="credits-top credits-end-bottom"><span class="credits-end-mark">끝</span></div>';
-  const INSPIRATIONS_HTML = '<div class="credits-refs"><p class="credits-ref-note">안내자들의 말 가운데 몇 마디는 벨라 타르의 인터뷰와 강연에서, 그녀가 읽은 책의 제목은 밀란 쿤데라에게서 빌렸습니다.</p><p class="credits-ref-head">이 이야기에 영감을 준 것들</p>' +
+  const INSPIRATIONS_HTML = '<div class="credits-refs"><p class="credits-ref-head">이 이야기에 영감을 준 것들</p>' +
     INSPIRATIONS.map((r, i) => `<p class="credits-ref"><a href="${r.url}" target="_blank" rel="noopener"><span class="ref-no">${i + 1}.</span> <span class="ref-kind">(${r.kind})</span> ${escapeHtml(r.by)}, 〈${escapeHtml(r.title)}〉 ${r.year ? `<span class="ref-year">(${r.year})</span>` : ''}</a></p>`).join('') +
     '</div>';
   const creditsItemHtml = (html) => html;
