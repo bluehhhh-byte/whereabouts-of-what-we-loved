@@ -26,7 +26,7 @@ OUT = ROOT / "audio"
 # Edge TTS offers three Korean voices: HyunsuMultilingual (M), InJoon (M), SunHi (F).
 # Hyunsu is the calmer of the two men; slowed and lowered it reads like a quiet murmur.
 VOICES = {
-    "m": {"voice": "ko-KR-HyunsuMultilingualNeural", "rate": "-18%", "pitch": "-16Hz"},
+    "m": {"voice": "ko-KR-HyunsuMultilingualNeural", "rate": "-14%", "pitch": "-16Hz"},
     "f": {"voice": "ko-KR-SunHiNeural", "rate": "-14%", "pitch": "-6Hz"},
 }
 CONCURRENCY = 4
